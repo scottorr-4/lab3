@@ -63,14 +63,14 @@ function createMap2() {
     });
     
 function style(feature) {
-    return {
-        fillColor: getColorprops['Variable observation value'],
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-    };
+        return {
+            fillColor: getColor(feature.properties['Variable observation value']),
+            weight: 2,
+            opacity: 1,
+            color: 'white',
+            dashArray: '3',
+            fillOpacity: 0.7
+        };
 }
     // Add OSM base tile layer
     L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
