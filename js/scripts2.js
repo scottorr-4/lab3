@@ -79,4 +79,26 @@ function createMap2() {
     }).addTo(map2);
 
     // Add GeoJSON layer to map2 with styling and event handlers
-    fetch("data
+    fetch("data/state_emissions.json")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
+            // Use the JSON data to create the geojson2 layer
+            geojson2 = L.geoJson(json, { 
+                style: style,
+                onEachFeature: onEachFeature2
+            }).addTo(map2);
+
+            // Add info control to map2
+            info2.addTo(map2);
+        })
+        .catch(function (error) {
+            console.error("Error loading the data: ", error);
+        });
+}
+
+// Initialize the map when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    createMap2();
+});
