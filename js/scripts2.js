@@ -1,4 +1,4 @@
-//Map 2
+// Map 2
 
 var map2, geojson2;
 
@@ -57,12 +57,12 @@ function onEachFeature2(feature, layer) {
 
 // Function to create map2
 function createMap2() {
-        map2 = L.map('map2', {
+    map2 = L.map('map2', {
         center: [39.83, -98.58],
         zoom: 4
     });
-    
-function style(feature) {
+
+    function style(feature) {
         return {
             fillColor: getColor(feature.properties['Variable observation value']),
             weight: 2,
@@ -71,35 +71,12 @@ function style(feature) {
             dashArray: '3',
             fillOpacity: 0.7
         };
-}
+    }
+
     // Add OSM base tile layer
     L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
     }).addTo(map2);
 
     // Add GeoJSON layer to map2 with styling and event handlers
-
-          fetch("data/state_emissions.json")
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (json) {
-                // Use the JSON data to create the geojson2 layer
-                geojson2 = L.geoJson(json, { 
-                    style: style,
-                    onEachFeature: onEachFeature2
-                }).addTo(map2);
-    
-                // Add info control to map2
-                info2.addTo(map2);
-    
-             })
-            .catch(function (error) {
-                console.error("Error loading the data: ", error);
-            });
-    
-
-// Initialize the map when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    createMap2();
-});
+    fetch("data
