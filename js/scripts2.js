@@ -14,7 +14,7 @@ info2.onAdd = function (map2) {
 // Method to update the control based on feature properties passed
 info2.update = function (props) {
     this._div.innerHTML = '<h4>US Population Density</h4>' + (props ?
-        '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>' :
+        '<b>' + props.name + '</b><br />' + props['Variable observation value'] + ' people / mi<sup>2</sup>' :
         'Hover over a state');
 };
 
@@ -106,7 +106,7 @@ function getColor(d) {
 
 function style(feature) {
     return {
-        fillColor: getColor(feature.properties.density),
+        fillColor: getColor(feature.properties['Variable observation value']),
         weight: 2,
         opacity: 1,
         color: 'white',
