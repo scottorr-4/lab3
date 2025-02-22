@@ -64,7 +64,7 @@ function createMap2() {
 
     function style(feature) {
         return {
-            fillColor: getColor(props['Variable observation value']),
+            fillColor: null,
             weight: 2,
             opacity: 1,
             color: 'white',
