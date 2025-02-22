@@ -92,51 +92,6 @@ function createMap2() {
     }
     
 
-// Function to get color based on density
-function getColor(d) {
-    return d > 1000 ? '#08589e' :
-           d > 500  ? '#2b8cbe' :
-           d > 200  ? '#4eb3d3' :
-           d > 100  ? '#7bccc4' :
-           d > 50   ? '#a8ddb5' :
-           d > 20   ? '#ccebc5' :
-           d > 10   ? '#e0f3db' :
-                      '#f7fcf0';
-}
-
-function style(feature) {
-    return {
-        fillColor: getColor(feature.properties['Variable observation value']),
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-    };
-}
-
-// Define the legend control for map2
-var legend2 = L.control({position: 'bottomright'});
-
-legend2.onAdd = function (map2) {
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-        labels = [];
-
-      
-    // Add the title to the legend
-    div.innerHTML = '<h4>People / mile<sup>2</sup></h4>'
-
-    // Loop through our density intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < grades.length; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
-
-    return div;
-};
-
 // Initialize the map when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     createMap2();
