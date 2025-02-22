@@ -87,7 +87,6 @@ function createMap2() {
             .catch(function (error) {
                 console.error("Error loading the data: ", error);
             });
-    }
     
 
 // Initialize the map when the DOM is fully loaded
