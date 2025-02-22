@@ -69,7 +69,7 @@ function createMap2() {
 
     // Add GeoJSON layer to map2 with styling and event handlers
 
-          fetch("data/states.json")
+          fetch("data/states_emissions.geojson")
             .then(function (response) {
                 return response.json();
             })
