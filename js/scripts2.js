@@ -83,9 +83,7 @@ function createMap2() {
                 // Add info control to map2
                 info2.addTo(map2);
     
-                // Add legend to map2
-                legend2.addTo(map2);
-            })
+             })
             .catch(function (error) {
                 console.error("Error loading the data: ", error);
             });
