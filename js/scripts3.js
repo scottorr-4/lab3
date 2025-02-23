@@ -13,8 +13,8 @@ info2.onAdd = function (map2) {
 
 // Method to update the control based on feature properties passed
 info2.update = function (props) {
-    this._div.innerHTML = '<h4>US Population Density</h4>' + (props ?
-        '<b>' + props.name + '</b><br />' + props['Variable observation value'] + ' people / mi<sup>2</sup>' :
+    this._div.innerHTML = '<h4>US Annual Emissions</h4>' + (props ?
+        '<b>' + props.name + '</b><br />' + props['Variable observation value'] + ' Metric tons of CO<sub>2</sub>' :
         'Hover over a state');
 };
 
