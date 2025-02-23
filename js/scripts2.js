@@ -26,7 +26,7 @@ function highlightFeature2(e) {
         weight: 5,
         color: '#666',
         dashArray: '',
-        fillOpacity: 0.7
+        fillOpacity: 0.1
     });
 
     layer.bringToFront();
